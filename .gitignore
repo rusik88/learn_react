@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Development environment
+.idea
+
 # testing
 /coverage
 
