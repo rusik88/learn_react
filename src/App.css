@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+h1 {
+  margin-bottom:20px;
+  font-size:70px;
+}
+
+form {
+  font-size:30px;
+}
+
+input {
+  margin:15px;
+  padding:10px;
+  font-size:20px;
+}
+
+label {
+  display:block;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
