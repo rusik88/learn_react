@@ -10,6 +10,10 @@ function App() {
     setCounterState(counterState + 1)
   }
 
+  const resetCounter = () => {
+      setCounterState(0)
+  }
+
   return (
     <div className="App">
       <Counter count={counterState} />
@@ -17,6 +21,9 @@ function App() {
       <Button funcCount={ incrementCount } />
       <Button funcCount={ incrementCount } />
       <Button funcCount={ incrementCount } />
+        {counterState > 0 && (
+            <div><button onClick={resetCounter}>Reset</button></div>
+        )}
     </div>
   );
 }
