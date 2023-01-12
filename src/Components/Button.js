@@ -1,6 +1,6 @@
-function Button({ funcCount }) {
+function Button({ funcCount, text }) {
     return (
-        <button onClick={ funcCount }>Click Me</button>
+        <button onClick={ funcCount }>{ text }</button>
     )
 }
 

@@ -10,13 +10,18 @@ function App() {
     setCounterState(counterState + 1)
   }
 
+  const texts = ["Click Me 1", "Click Me 2", "Click Me 10", "Click Me 4"]
+
   return (
     <div className="App">
       <Counter count={counterState} />
-      <Button funcCount={ incrementCount } />
-      <Button funcCount={ incrementCount } />
-      <Button funcCount={ incrementCount } />
-      <Button funcCount={ incrementCount } />
+        {texts.map(text => {
+            return (
+                <div>
+                    <Button funcCount={ incrementCount } text={text} />
+                </div>
+            )
+        })}
     </div>
   );
 }
