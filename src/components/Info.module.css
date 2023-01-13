@@ -1,0 +1,12 @@
+.info {
+    border:2px solid gray;
+    border-radius:10px;
+}
+
+.info button {
+    background:blue;
+}
+
+.myOtherButton {
+    background-color:coral;
+}
