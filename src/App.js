@@ -50,7 +50,7 @@ function App() {
 
       <TodoList toggleTodo={toggleTodoHandler} deleteTodo={deleteTodoHandler} todos={todos} />
 
-      {!!completedTodosCount &&git
+      {!!completedTodosCount &&
         <h3>Completed {completedTodosCount} tasks</h3>
       }
     </div>
