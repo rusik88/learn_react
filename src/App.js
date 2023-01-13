@@ -1,5 +1,9 @@
 import './App.css';
+<<<<<<< HEAD
 import {useEffect, useState} from "react";
+=======
+import Posts from "./components/Posts";
+>>>>>>> master
 
 function App() {
 
@@ -16,11 +20,15 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       {
         placeState
           ? (<h1>{placeState.title}</h1>)
           : (<div>Loading...</div>)
       }
+=======
+      <Posts />
+>>>>>>> master
     </div>
   );
 }
