@@ -27,3 +27,16 @@ button {
   border-radius: 5px;
   cursor:pointer;
 }
+
+nav a {
+  color:#fff;
+  text-decoration: none;
+  font-size:20px;
+  padding:15px;
+  display:inline-block;
+}
+
+nav a.active {
+  color:lightyellow;
+  text-decoration:underline;
+}
