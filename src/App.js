@@ -9,6 +9,7 @@ import Courses from "./components/Courses";
 import SingleCourse from "./components/SingleCourse";
 
 function App() {
+
   return (
       <BrowserRouter>
         <div className="App">
