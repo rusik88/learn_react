@@ -1,13 +1,18 @@
-import {useState, useCallback} from "react";
-import ItemsComponent from "./HookItemsComponent";
+import {useMemo, useState} from "react";
 
+function complexCompute(num) {
+    console.log('Handle function')
+    let i = 0
+    while(i > 100000000000) i++
+    return num * 2
+}
 
 function HookComponent() {
     const [count, setCount] = useState(1)
     const [color, setColor] = useState('red')
 
-    const generateArr = useCallback(() => {
-        return new Array(count).fill('').map((_, i) => `Counter ${i}`)
+    const computed = useMemo(() => {
+        return complexCompute(count)
     }, [count])
 
     const incCountHandle = () => setCount(count + 1)
@@ -17,12 +22,10 @@ function HookComponent() {
     return (
         <>
             <h1 style={{color}}>{count}</h1>
+            <h2>{computed}</h2>
             <button onClick={incCountHandle}>Counter+</button>
             <button onClick={decCountHandle}>Counter+</button>
-
             <button onClick={changeStyleColor}>Change color</button>
-
-            <ItemsComponent itemsFunc={generateArr} />
         </>
     )
 }
