@@ -7,7 +7,7 @@ import NotFound from "./components/NotFound";
 import MainLayout from "./layouts/MainLayout";
 import Courses from "./components/Courses";
 import SingleCourse from "./components/SingleCourse";
-import HookComponent from "./components/HookComponent";
+import HookMain from "./components/Hook/HookMain";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
                     <Route path="/contacts" element={<Contact />} />
                     <Route path="/courses" element={<Courses />} />
                     <Route path="/courses/:slug" element={<SingleCourse />} />
-                    <Route path="/hook" element={<HookComponent />} />
+                    <Route path="/hook" element={<HookMain />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
