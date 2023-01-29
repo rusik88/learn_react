@@ -1,18 +1,15 @@
-import {createContext, useState} from "react";
 import HookAlertComponent from "./HookAlertComponent";
 import HookComponent from "./HookComponent";
+import HookProvider from "./HookProvider";
 
-export const AlertContext = createContext()
 
 function HookMain() {
-    const [alert, setAlert] = useState(false)
-    const toggleAlert = () => setAlert(prev => !prev)
 
     return(
-        <AlertContext.Provider value={alert}>
+        <HookProvider>
             <HookAlertComponent />
-            <HookComponent toggle={toggleAlert} />
-        </AlertContext.Provider>
+            <HookComponent />
+        </HookProvider>
     )
 }
 

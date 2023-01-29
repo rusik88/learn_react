@@ -1,14 +1,14 @@
-import {useContext} from "react";
-import {AlertContext} from "./HookMain";
+import {useAlert} from "./HookProvider";
 
 
 function HookAlertComponent() {
-    const alert = useContext(AlertContext)
+    const {alert} = useAlert()
 
     if(!alert) return null
 
     return (
         <>
+            {console.log('alert', alert)}
             <h3>This message into alert</h3>
         </>
     )

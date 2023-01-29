@@ -1,9 +1,13 @@
+import {useAlert} from "./HookProvider";
 
-function HookComponent({toggle}) {
+function HookComponent() {
+
+    const { toggleAlert } = useAlert()
+
     return(
         <>
             <h1>Hook page</h1>
-            <button onClick={toggle}>Show important message</button>
+            <button onClick={toggleAlert}>Show important message</button>
         </>
 
     )
