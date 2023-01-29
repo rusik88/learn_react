@@ -1,28 +1,38 @@
-import {useState, useCallback} from "react";
-import ItemsComponent from "./HookItemsComponent";
+import {useState} from "react";
+
+const useInput = (initialValue) => {
+    const [value, setValue] = useState(initialValue)
+
+    const clearInput = () => {
+        setValue('')
+    }
+
+    return {
+        bind: {
+            value: value,
+            onChange: (event) => {
+                setValue(event.target.value)
+            }
+        },
+        clearInput
+    }
+}
 
 
 function HookComponent() {
-    const [count, setCount] = useState(1)
-    const [color, setColor] = useState('red')
+    const inputName = useInput('')
+    const inputEmail = useInput('')
 
-    const generateArr = useCallback(() => {
-        return new Array(count).fill('').map((_, i) => `Counter ${i}`)
-    }, [count])
-
-    const incCountHandle = () => setCount(count + 1)
-    const decCountHandle = () => setCount(count - 1)
-    const changeStyleColor = () => color === 'red' ? setColor('blue') : setColor('red')
 
     return (
         <>
-            <h1 style={{color}}>{count}</h1>
-            <button onClick={incCountHandle}>Counter+</button>
-            <button onClick={decCountHandle}>Counter+</button>
-
-            <button onClick={changeStyleColor}>Change color</button>
-
-            <ItemsComponent itemsFunc={generateArr} />
+            <input type="text" name="name" {...inputName.bind} />
+            <h1>{inputName.bind.value}</h1>
+            <button onClick={inputName.clearInput}>Clear input</button>
+            <hr />
+            <input type="text" name="email" {...inputEmail.bind} />
+            <h1>{inputEmail.bind.value}</h1>
+            <button onClick={inputEmail.clearInput}>Clear input</button>
         </>
     )
 }
