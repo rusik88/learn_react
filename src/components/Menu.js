@@ -7,6 +7,7 @@ function Menu() {
             <NavLink to="/courses">Courses</NavLink>
             <NavLink to="/about">About</NavLink>
             <NavLink to="/contacts">Contacts</NavLink>
+            <NavLink to="/hook">Hook</NavLink>
         </nav>
     )
 }
